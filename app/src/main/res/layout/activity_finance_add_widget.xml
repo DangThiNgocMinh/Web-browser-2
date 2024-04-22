@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sport_add_widget">
+    <RelativeLayout
+        android:id="@+id/input_fields_sport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/back_finance"
+            android:layout_width="35dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:onClick="imageClick_finance_back"
+            android:src="@drawable/ic_backward" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Finance"
+            android:fontFamily="@font/montserrat"
+            android:layout_toRightOf="@+id/back_finance"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/progress_bar_sport"
+        style="?android:attr/progressBarStyleHorizontal"
+        app:layout_constraintTop_toBottomOf="@+id/input_fields_sport"
+        android:visibility="visible" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/finance_row_1"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar_sport"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/paypal"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/paypal"
+            android:onClick="imageClick_finance"
+            android:background="@drawable/border"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:id="@+id/text_paypal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/paypal"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Paypal" />
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/zillow"
+            android:layout_toRightOf="@+id/paypal"
+            android:src="@drawable/pillow"
+            android:layout_marginLeft="25dp"
+            android:onClick="imageClick_finance"
+            android:background="@drawable/border"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:id="@+id/text_zillow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/zillow"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/text_paypal"
+            android:fontFamily="@font/montserrat"
+            android:text="Zillow" />
+
+        <ImageView
+            android:id="@+id/latoken"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@id/zillow"
+            android:background="@drawable/border"
+            android:onClick="imageClick_finance"
+            android:src="@drawable/latoken" />
+
+        <TextView
+            android:id="@+id/text_latoken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/latoken"
+            android:layout_marginLeft="43dp"
+            android:layout_toRightOf="@id/text_zillow"
+            android:fontFamily="@font/montserrat"
+            android:text="Latoken" />
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/okx"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/okx"
+            android:background="@drawable/border"
+            android:onClick="imageClick_finance"
+            android:layout_toRightOf="@+id/latoken"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/okx"
+            android:layout_marginLeft="35dp"
+            android:layout_toRightOf="@+id/text_latoken"
+            android:fontFamily="@font/montserrat"
+            android:text="OKX" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/finace_row_2"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/finance_row_1"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/plus500"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/plus500"
+            android:background="@drawable/border"
+            android:onClick="imageClick_finance"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:id="@+id/text_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/plus500"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Plus500" />
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/coinmarket"
+            android:layout_toRightOf="@+id/plus500"
+            android:src="@drawable/coinmarket"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/border"
+            android:onClick="imageClick_finance"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:id="@+id/text_coinmarket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/coinmarket"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/text_plus"
+            android:fontFamily="@font/montserrat"
+            android:text="CoinMarket" />
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/xmza"
+            android:layout_toRightOf="@id/coinmarket"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/xmza"
+            android:background="@drawable/border"
+            android:onClick="imageClick_finance"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:id="@+id/text_xmza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/xmza"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@id/text_coinmarket"
+            android:fontFamily="@font/montserrat"
+            android:text="XMZA" />
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/kotak"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/kotak"
+            android:background="@drawable/border"
+            android:onClick="imageClick_finance"
+            android:layout_toRightOf="@+id/xmza"
+            android:layout_height="60dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/kotak"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/text_xmza"
+            android:fontFamily="@font/montserrat"
+            android:text="Kotak" />
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

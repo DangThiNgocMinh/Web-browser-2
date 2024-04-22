@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mainlayout"
+            android:background="@drawable/bggg">
+
+            <!-- AppBarLayout -->
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_app_bar_background"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <!-- AppBarLayout content -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <!-- ImageView "google" -->
+                    <ImageView
+                        android:id="@+id/google"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:onClick="imageClicked"
+                        android:src="@drawable/gg" />
+
+                    <!-- SearchView -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/search_view"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@+id/google"
+                        android:onClick="imageClicked"
+                        android:paddingStart="5dp" />
+
+                    <!-- ImageView "qrcode" -->
+                    <ImageView
+                        android:id="@+id/qrcode"
+                        android:layout_width="45dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/search_view"
+                        android:layout_toRightOf="@id/search_view"
+                        android:padding="5dp"
+                        android:src="@drawable/qr" />
+
+                    <!-- ImageView "voice" -->
+                    <ImageView
+                        android:id="@+id/voice"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/qrcode"
+                        android:src="@drawable/voice" />
+                </RelativeLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <!-- ProgressBar -->
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/appbar" />
+            <!-- WebView -->
+
+            <LinearLayout
+                android:layout_width="450dp"
+                android:layout_height="170dp"
+                android:orientation="horizontal"
+                android:id="@+id/apps"
+                android:layout_below="@id/progress_bar">
+
+                <!-- LinearLayout for Facebook -->
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    >
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/fb"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:onClick="imageClicked_1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/fb"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Facebook"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/business"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:onClick="imageClicked_1"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/stock"
+                        app:shapeAppearanceOverlay="@style/circular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Business"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- LinearLayout for Google -->
+                <LinearLayout
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/gg"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:onClick="imageClicked_1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/gg"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Google"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/livefb"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="imageClicked_1"
+                        android:padding="0dp"
+                        android:src="@drawable/livefb"
+                        app:shapeAppearanceOverlay="@style/circular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Livestream"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="0dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/insta"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:onClick="imageClicked_1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/insta"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Instagram"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/chess"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="imageClicked_1"
+                        android:padding="0dp"
+                        android:src="@drawable/chess"
+                        app:shapeAppearanceOverlay="@style/circular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chess"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="-10dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/game"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:onClick="imageClicked_1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/game"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Games"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/wiki"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:onClick="imageClicked_1"
+                        android:src="@drawable/wiki"
+                        app:shapeAppearanceOverlay="@style/circular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wikipedia"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/booking"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:onClick="imageClicked_1"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/booking"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Booking"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+            <ProgressBar
+                android:id="@+id/progress_bar_3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="350dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:layout_below="@id/apps"
+
+            />
+
+            <LinearLayout
+                android:layout_width="450dp"
+                android:layout_height="190dp"
+                android:orientation="horizontal"
+                android:id="@+id/apps_2"
+                android:layout_below="@id/progress_bar_3">
+
+                <!-- LinearLayout for Facebook -->
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    >
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="5dp"
+                        android:onClick="imageClicked"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/add"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add"
+                        android:textSize="10sp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add_6"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="imageClicked_1"
+                        android:src="@drawable/stock"
+                        android:visibility="invisible"
+                        app:shapeAppearanceOverlay="@style/circular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Business"
+                        android:textSize="10sp"
+                        android:visibility="invisible"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- LinearLayout for Google -->
+                <LinearLayout
+                    android:layout_width="25dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="0dp"
+                    android:visibility="invisible">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="imageClicked_1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/gg"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Google"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add_7"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="imageClicked_1"
+                        android:padding="0dp"
+                        android:src="@drawable/livefb"
+                        app:shapeAppearanceOverlay="@style/circular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Livestream"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="0dp"
+                    android:visibility="invisible">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="imageClicked_1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/insta"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Instagram"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add_8"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="imageClicked_1"
+                        android:padding="0dp"
+                        android:src="@drawable/chess"
+                        app:shapeAppearanceOverlay="@style/circular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chess"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="185dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="-10dp"
+                    android:visibility="invisible">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="imageClicked_1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/game"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Games"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add_9"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="5dp"
+                        android:onClick="imageClicked_1"
+                        android:src="@drawable/wiki"
+                        app:shapeAppearanceOverlay="@style/circular" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wikipedia"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="20dp"
+                    android:layout_height="85dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:visibility="invisible">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/add_5"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="imageClicked_1"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/booking"
+                        app:shapeAppearanceOverlay="@style/circular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Booking"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/bottom_layout"
+                android:orientation="horizontal"
+                android:background="#F3F3F3"
+                android:gravity="center">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_backward"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:id="@+id/web_back" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_forward"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:id="@+id/web_forward" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/web_search"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="imageClicked"
+                    android:padding="10dp"
+                    android:src="@drawable/search" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/multitask"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:id="@+id/web_tabs" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/web_account"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="imageClicked"
+                    android:padding="10dp"
+                    android:src="@drawable/more" />
+
+
+
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/progress_bar_2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_above="@id/bottom_layout" />
+
+            <!-- LinearLayout for bottom row -->
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
